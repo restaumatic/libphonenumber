@@ -23,7 +23,9 @@ project (generate_geocoding_data)
 
 include (gtest.cmake)
 
-find_or_build_gtest ()
+if (${BUILD_TESTS} STREQUAL "ON")
+  find_or_build_gtest ()
+endif ()
 
 set (
   SOURCES
@@ -52,6 +54,8 @@ if (NOT WIN32)
 endif ()
 
 # Build the testing binary.
-include_directories ("test")
-add_executable (generate_geocoding_data_test ${TEST_SOURCES})
-target_link_libraries (generate_geocoding_data_test ${TEST_LIBS})
+if (${BUILD_TESTS} STREQUAL "ON")
+  include_directories ("test")
+  add_executable (generate_geocoding_data_test ${TEST_SOURCES})
+  target_link_libraries (generate_geocoding_data_test ${TEST_LIBS})
+endif ()

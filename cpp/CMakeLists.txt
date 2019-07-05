@@ -86,6 +86,7 @@ option ("USE_LITE_METADATA" "Use lite metadata" "OFF")
 option ("USE_RE2" "Use RE2" "OFF")
 option ("USE_STD_MAP" "Force the use of std::map" "OFF")
 option ("BUILD_STATIC_LIB" "Build static libraries" "ON")
+option ("BUILD_TESTS" "Build the test suite (requires gtest library)" "ON")
 
 if (${USE_ALTERNATE_FORMATS} STREQUAL "ON")
   add_definitions ("-DI18N_PHONENUMBERS_USE_ALTERNATE_FORMATS")
@@ -104,7 +105,9 @@ if (${USE_BOOST} STREQUAL "ON")
   include_directories (${Boost_INCLUDE_DIRS})
 endif ()
 
-find_or_build_gtest ()
+if (${BUILD_TESTS} STREQUAL "ON")
+  find_or_build_gtest ()
+endif ()
 
 if (${USE_RE2} STREQUAL "ON")
   find_required_library (RE2 re2/re2.h re2 "Google RE2")
