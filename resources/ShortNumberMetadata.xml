@@ -73,12 +73,22 @@
       <shortCode>
         <possibleLengths national="3"/>
         <exampleNumber>911</exampleNumber>
-        <nationalNumberPattern>911</nationalNumberPattern>
+        <nationalNumberPattern>
+          9(?:
+            11|
+            99
+          )
+        </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
         <exampleNumber>911</exampleNumber>
-        <nationalNumberPattern>911</nationalNumberPattern>
+        <nationalNumberPattern>
+          9(?:
+            11|
+            99
+          )
+        </nationalNumberPattern>
       </tollFree>
       <!-- http://studentsabroad.state.gov/content/pdfs/911_ABROAD.pdf
            http://www.noonsite.com/Countries/AscensionIsland/?rc=GeneralInfo
@@ -87,7 +97,12 @@
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>911</exampleNumber>
-        <nationalNumberPattern>911</nationalNumberPattern>
+        <nationalNumberPattern>
+          9(?:
+            11|
+            99
+          )
+        </nationalNumberPattern>
       </emergency>
     </territory>
 
@@ -166,10 +181,10 @@
       </generalDesc>
       <shortCode>
         <possibleLengths national="3,5"/>
-        <exampleNumber>102</exampleNumber>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            02|
+            0[02]|
             19
           )|
           40404
@@ -177,10 +192,10 @@
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
-        <exampleNumber>102</exampleNumber>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            02|
+            0[02]|
             19
           )
         </nationalNumberPattern>
@@ -193,10 +208,10 @@
       </carrierSpecific>
       <emergency>
         <possibleLengths national="3"/>
-        <exampleNumber>102</exampleNumber>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            02|
+            0[02]|
             19
           )
         </nationalNumberPattern>
@@ -479,7 +494,9 @@
           1(?:
             0[0-35-7]|
             1[02-5]|
-            2[15]|
+            2[015]|
+            34|
+            4[478]|
             9
           )|
           3372|
@@ -497,7 +514,9 @@
           1(?:
             0[0-35-7]|
             1[0245]|
-            2[15]|
+            2[015]|
+            34|
+            4[478]|
             9
           )|
           911
@@ -522,7 +541,14 @@
       <expandedEmergency>
         <possibleLengths national="3"/>
         <exampleNumber>103</exampleNumber>
-        <nationalNumberPattern>10[356]</nationalNumberPattern>
+        <nationalNumberPattern>
+          1(?:
+            0[356]|
+            20|
+            34|
+            4[478]
+          )
+        </nationalNumberPattern>
       </expandedEmergency>
       <!-- https://support.twitter.com/articles/20170024 -->
       <smsServices>
@@ -657,11 +683,17 @@
               9[46]
             )|
             2(?:
+              014[1-3]|
               [23]\d|
               (?:
                 4|
                 5\d
               )\d{2,3}|
+              68[689]|
+              72(?:
+                20|
+                3\d\d
+              )|
               8(?:
                 [013-9]\d|
                 2
@@ -758,9 +790,10 @@
         <nationalNumberPattern>
           1(?:
             00|
+            18|
             76
           )|
-          911
+          91[13]
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -1103,12 +1136,11 @@
               6[16]
             )|
             7(?:
-              0[07]|
+              [07][017]|
               1[27-9]|
               22|
               33|
-              65|
-              7[017]
+              65
             )|
             81[39]
           )|
@@ -1648,7 +1680,7 @@
     <!-- http://www.anatel.gov.br/Portal/exibirPortalPaginaEspecial.do?codItemCanal=746&codCanal=277 -->
     <territory id="BR">
       <generalDesc>
-        <nationalNumberPattern>[124-69]\d{2,5}</nationalNumberPattern>
+        <nationalNumberPattern>[1-69]\d{2,5}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
         <possibleLengths national="[3-6]"/>
@@ -1697,6 +1729,10 @@
             )|
             85959?
           )|
+          (?:
+            32|
+            91
+          )1|
           4(?:
             0404?|
             57|
@@ -1707,7 +1743,6 @@
             0\d{4}|
             10000
           )|
-          911|
           (?:
             133|
             411
@@ -1740,7 +1775,8 @@
         <exampleNumber>102</exampleNumber>
         <nationalNumberPattern>
           102|
-          273\d\d
+          273\d\d|
+          321
         </nationalNumberPattern>
       </standardRate>
       <!-- https://support.twitter.com/articles/20170024 -->
@@ -1797,10 +1833,11 @@
       <!-- Added short codes 28595, 285959 and 4828 after a report that it is used for SMS
            services. We can't find range-related information, despite emailing Anatel. -->
       <smsServices>
-        <possibleLengths national="[4-6]"/>
-        <exampleNumber>4820</exampleNumber>
+        <possibleLengths national="[3-6]"/>
+        <exampleNumber>321</exampleNumber>
         <nationalNumberPattern>
           285\d{2,3}|
+          321|
           40404|
           (?:
             27[38]\d|
@@ -2800,7 +2837,7 @@
         <nationalNumberPattern>
           1(?:
             00\d\d|
-            1[09]|
+            1[029]|
             20
           )|
           95\d{3,4}
@@ -2824,10 +2861,13 @@
            specifically wants to reach an operator in a different region. That case is more like
            fixed-line and is covered under the fixed-line pattern in PhoneNumberMetadata.xml. -->
       <standardRate>
-        <possibleLengths national="5,6"/>
-        <exampleNumber>10000</exampleNumber>
+        <possibleLengths national="3,5,6"/>
+        <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
-          100\d\d|
+          1(?:
+            00\d\d|
+            12
+          )|
           95\d{3,4}
         </nationalNumberPattern>
       </standardRate>
@@ -2886,12 +2926,12 @@
         <nationalNumberPattern>
           1(?:
             06|
-            1[2569]|
-            2[357]|
+            1[2-9]|
+            2[35-7]|
             3[27]|
             4[467]|
             5[36]|
-            6[45]|
+            6[4-7]|
             95
           )|
           40404|
@@ -2942,10 +2982,11 @@
         <exampleNumber>106</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            [01]6|
+            06|
+            1[467]|
             [23]7|
             4[47]|
-            6[45]
+            6[4-6]
           )
         </nationalNumberPattern>
       </expandedEmergency>
@@ -3365,7 +3406,7 @@
             6(?:
               00[06]|
               1(?:
-                1[17]|
+                1[167]|
                 23
               )
             )
@@ -4365,8 +4406,11 @@
         <exampleNumber>91</exampleNumber>
         <nationalNumberPattern>
           9(?:
+            07|
             11?|
-            [23]|
+            2|
+            39?|
+            45|
             9[17]
           )
         </nationalNumberPattern>
@@ -4376,8 +4420,10 @@
         <exampleNumber>91</exampleNumber>
         <nationalNumberPattern>
           9(?:
+            07|
             11?|
-            [23]|
+            2|
+            39?|
             9[17]
           )
         </nationalNumberPattern>
@@ -4393,11 +4439,22 @@
         <nationalNumberPattern>
           9(?:
             11?|
-            [23]|
+            2|
+            39?|
             9[17]
           )
         </nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="3"/>
+        <exampleNumber>907</exampleNumber>
+        <nationalNumberPattern>
+          9(?:
+            07|
+            45
+          )
+        </nationalNumberPattern>
+      </expandedEmergency>
     </territory>
 
     <!-- Finland (FI) -->
@@ -4419,7 +4476,7 @@
         <nationalNumberPattern>
           11(?:
             2|
-            6111
+            611[17]
           )|
           75[12]\d\d
         </nationalNumberPattern>
@@ -4680,6 +4737,7 @@
           10(?:
             [134]4|
             2[23]|
+            5\d|
             99
           )|
           202\d|
@@ -4825,7 +4883,7 @@
           1(?:
             0[015]|
             1(?:
-              [12]|
+              [129]|
               6(?:
                 000|
                 1(?:
@@ -4897,7 +4955,7 @@
           1(?:
             05|
             1(?:
-              2|
+              [29]|
               6\d{3}
             )|
             7[56]\d|
@@ -4948,7 +5006,10 @@
         <nationalNumberPattern>
           1(?:
             01|
-            16\d{3}
+            1(?:
+              6\d{3}|
+              9
+            )
           )
         </nationalNumberPattern>
       </expandedEmergency>
@@ -5401,12 +5462,19 @@
     <!-- Guinea (GN) -->
     <territory id="GN">
       <generalDesc>
-        <nationalNumberPattern>4\d{4}</nationalNumberPattern>
+        <nationalNumberPattern>
+          [14]\d\d(?:
+            \d{2}
+          )?
+        </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="5"/>
-        <exampleNumber>40404</exampleNumber>
-        <nationalNumberPattern>40404</nationalNumberPattern>
+        <possibleLengths national="3,5"/>
+        <exampleNumber>120</exampleNumber>
+        <nationalNumberPattern>
+          12\d|
+          40404
+        </nationalNumberPattern>
       </shortCode>
       <!-- https://support.twitter.com/articles/20170024 -->
       <carrierSpecific>
@@ -5454,28 +5522,32 @@
       <generalDesc>
         <nationalNumberPattern>
           1\d\d(?:
-            \d{3}
+            \d{2,3}
           )?
         </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,6"/>
+        <possibleLengths national="3,5,6"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            00|
+            0[089]|
             1(?:
               2|
+              320|
               6(?:
                 000|
                 1(?:
-                  11|
+                  1[17]|
                   23
                 )
               )
             )|
-            66|
-            99
+            (?:
+              389|
+              9
+            )9|
+            66
           )
         </nationalNumberPattern>
       </shortCode>
@@ -5484,7 +5556,7 @@
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            00|
+            0[089]|
             1(?:
               2|
               6\d{3}
@@ -5494,6 +5566,11 @@
           )
         </nationalNumberPattern>
       </tollFree>
+      <standardRate>
+        <possibleLengths national="5"/>
+        <exampleNumber>11300</exampleNumber>
+        <nationalNumberPattern>113\d\d</nationalNumberPattern>
+      </standardRate>
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>100</exampleNumber>
@@ -5507,9 +5584,14 @@
         </nationalNumberPattern>
       </emergency>
       <expandedEmergency>
-        <possibleLengths national="6"/>
-        <exampleNumber>116000</exampleNumber>
-        <nationalNumberPattern>116\d{3}</nationalNumberPattern>
+        <possibleLengths national="3,6"/>
+        <exampleNumber>108</exampleNumber>
+        <nationalNumberPattern>
+          1(?:
+            0[89]|
+            16\d{3}
+          )
+        </nationalNumberPattern>
       </expandedEmergency>
     </territory>
 
@@ -6040,17 +6122,18 @@
       <generalDesc>
         <nationalNumberPattern>
           [178]\d\d(?:
-            \d{2}
+            \d{2,3}
           )?
         </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,5"/>
+        <possibleLengths national="3,5,6"/>
         <exampleNumber>110</exampleNumber>
         <nationalNumberPattern>
           1(?:
             1[02389]|
-            40\d\d
+            40\d\d|
+            50264
           )|
           71400|
           89887
@@ -6175,23 +6258,25 @@
     <!-- http://en.wikipedia.org/wiki/%2B972 -->
     <territory id="IL">
       <generalDesc>
-        <nationalNumberPattern>1\d{2,4}</nationalNumberPattern>
+        <nationalNumberPattern>[12]\d{2,4}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
         <possibleLengths national="[3-5]"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            0(?:
-              [0-2]|
-              400
-            )|
+            0[0-2]|
             1(?:
               [013-9]\d|
               2
             )|
             [2-9]\d\d
-          )
+          )|
+          2407|
+          (?:
+            104|
+            27
+          )00
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -7230,7 +7315,7 @@
         <nationalNumberPattern>
           1(?:
             09|
-            1[0-2]|
+            1[0-248]|
             9[0-24-79]
           )|
           9(?:
@@ -7245,7 +7330,7 @@
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            12|
+            1[24]|
             9[127]
           )|
           911
@@ -7276,8 +7361,13 @@
       </emergency>
       <expandedEmergency>
         <possibleLengths national="3"/>
-        <exampleNumber>190</exampleNumber>
-        <nationalNumberPattern>190</nationalNumberPattern>
+        <exampleNumber>114</exampleNumber>
+        <nationalNumberPattern>
+          1(?:
+            14|
+            90
+          )
+        </nationalNumberPattern>
       </expandedEmergency>
       <!-- https://support.twitter.com/articles/20170024 -->
       <smsServices>
@@ -7301,13 +7391,20 @@
       </generalDesc>
       <shortCode>
         <possibleLengths national="3"/>
-        <exampleNumber>110</exampleNumber>
-        <nationalNumberPattern>11[09]</nationalNumberPattern>
+        <exampleNumber>102</exampleNumber>
+        <nationalNumberPattern>
+          1(?:
+            0[24]|
+            1[089]|
+            44|
+            89
+          )
+        </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
         <exampleNumber>110</exampleNumber>
-        <nationalNumberPattern>11[09]</nationalNumberPattern>
+        <nationalNumberPattern>11[089]</nationalNumberPattern>
       </tollFree>
       <emergency>
         <possibleLengths national="3"/>
@@ -7577,7 +7674,7 @@
     <!-- http://tskl.net.ki/services has others. -->
     <territory id="KI">
       <generalDesc>
-        <nationalNumberPattern>[17]\d{2,3}</nationalNumberPattern>
+        <nationalNumberPattern>[179]\d{2,3}</nationalNumberPattern>
       </generalDesc>
       <!-- http://tskl.net.ki/services/3g-4g-rates-offpeaks/quick-dial-credit-checking-codes/
            lists 777 as voicemail access. -->
@@ -7591,13 +7688,17 @@
             9[2-5]
           )|
           777|
+          99[2-4]|
           10[0-8]
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
         <exampleNumber>192</exampleNumber>
-        <nationalNumberPattern>19[2-5]</nationalNumberPattern>
+        <nationalNumberPattern>
+          19[2-5]|
+          99[2-4]
+        </nationalNumberPattern>
       </tollFree>
       <!-- http://www.tskl.net.ki/910_operator.php - charged at $0.20 per call. -->
       <standardRate>
@@ -7608,7 +7709,10 @@
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>192</exampleNumber>
-        <nationalNumberPattern>19[2-5]</nationalNumberPattern>
+        <nationalNumberPattern>
+          19[2-5]|
+          99[2-4]
+        </nationalNumberPattern>
       </emergency>
       <!-- See comment for emergency section. -->
       <expandedEmergency>
@@ -7731,19 +7835,23 @@
           1(?:
             [016-9]114|
             3(?:
+              0[01]|
               2|
-              3[039]|
-              45|
-              66|
-              88|
-              9[18]
+              3[0-35-9]|
+              45?|
+              5[057]|
+              6[569]|
+              7[79]|
+              8[2589]|
+              9[0189]
             )
           )|
           1(?:
-            0[01]|
-            1[0247-9]|
-            2[01389]|
-            82
+            0[015]|
+            1\d|
+            2[01357-9]|
+            41|
+            8[28]
           )
         </nationalNumberPattern>
       </shortCode>
@@ -7766,11 +7874,15 @@
         <possibleLengths national="3,5"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
-          1[016-9]1\d\d|
           1(?:
             0[01]|
-            14
-          )
+            1[4-6]|
+            41
+          )|
+          1(?:
+            [06-9]1\d|
+            111
+          )\d
         </nationalNumberPattern>
       </carrierSpecific>
       <emergency>
@@ -7782,14 +7894,16 @@
            https://en.wikipedia.org/wiki/Telephone_numbers_in_South_Korea -->
       <expandedEmergency>
         <possibleLengths national="3,4"/>
-        <exampleNumber>117</exampleNumber>
+        <exampleNumber>111</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            17|
+            1[137]|
             2[139]|
             3(?:
-              3[09]|
-              [689]\d
+              3[019]|
+              66|
+              8[89]|
+              9[018]
             )|
             82
           )
@@ -8084,12 +8198,39 @@
     <!-- http://www.itu.int/oth/T02020000C3/en -->
     <territory id="LK">
       <generalDesc>
-        <nationalNumberPattern>1\d\d</nationalNumberPattern>
+        <nationalNumberPattern>1\d{2,3}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,4"/>
         <exampleNumber>110</exampleNumber>
-        <nationalNumberPattern>11[024-9]</nationalNumberPattern>
+        <nationalNumberPattern>
+          1(?:
+            1[024-9]|
+            3(?:
+              00|
+              1[2-49]|
+              2[23]|
+              3[1-3]|
+              44|
+              5[07]|
+              [67]9|
+              88|
+              9[039]
+            )|
+            9(?:
+              0[0-2589]|
+              1[0-357-9]|
+              2[0-25689]|
+              3[0389]|
+              4[0489]|
+              5[014-69]|
+              6[0-2689]|
+              7[03579]|
+              8[02457-9]|
+              9[0-2569]
+            )
+          )
+        </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
@@ -8219,11 +8360,11 @@
           1(?:
             0[1-3]|
             1(?:
-              2|
+              [27-9]|
               6(?:
                 000|
                 1(?:
-                  11|
+                  1[17]|
                   23
                 )
               )
@@ -8244,9 +8385,13 @@
             0[1-3]|
             1(?:
               2|
-              6\d{3}
+              6111
             )
-          )
+          )|
+          116(?:
+            0\d|
+            12
+          )\d
         </nationalNumberPattern>
       </tollFree>
       <emergency>
@@ -8521,9 +8666,9 @@
             1(?:
               2|
               6(?:
-                000|
+                00[06]|
                 1(?:
-                  11|
+                  1[17]|
                   23
                 )
               )|
@@ -8546,7 +8691,13 @@
         <nationalNumberPattern>
           11(?:
             2|
-            6\d{3}
+            6(?:
+              000|
+              1(?:
+                11|
+                2\d
+              )
+            )
           )|
           90[1-3]
         </nationalNumberPattern>
@@ -8559,6 +8710,16 @@
           90[1-3]
         </nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="6"/>
+        <exampleNumber>116006</exampleNumber>
+        <nationalNumberPattern>
+          116(?:
+            006|
+            117
+          )
+        </nationalNumberPattern>
+      </expandedEmergency>
     </territory>
 
     <!-- Montenegro (ME) -->
@@ -8713,24 +8874,41 @@
     <!-- http://www.itu.int/oth/T02020000CE/en -->
     <territory id="MK">
       <generalDesc>
-        <nationalNumberPattern>1\d\d</nationalNumberPattern>
+        <nationalNumberPattern>
+          1\d\d(?:
+            \d(?:
+              \d{2}
+            )?
+          )?
+        </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,4,6"/>
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            12|
+            1(?:
+              2|
+              8\d
+            )|
+            3\d|
             9[2-4]
-          )
+          )|
+          1(?:
+            16|
+            2\d
+          )\d{3}
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,6"/>
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            12|
+            1(?:
+              2|
+              6\d{3}
+            )|
             9[2-4]
           )
         </nationalNumberPattern>
@@ -8745,6 +8923,11 @@
           )
         </nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="6"/>
+        <exampleNumber>116000</exampleNumber>
+        <nationalNumberPattern>116\d{3}</nationalNumberPattern>
+      </expandedEmergency>
     </territory>
 
     <!-- Mali (ML) -->
@@ -8917,17 +9100,17 @@
       <shortCode>
         <possibleLengths national="3"/>
         <exampleNumber>100</exampleNumber>
-        <nationalNumberPattern>10[0-3]</nationalNumberPattern>
+        <nationalNumberPattern>10[0-35]</nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
         <exampleNumber>100</exampleNumber>
-        <nationalNumberPattern>10[0-3]</nationalNumberPattern>
+        <nationalNumberPattern>10[0-35]</nationalNumberPattern>
       </tollFree>
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>100</exampleNumber>
-        <nationalNumberPattern>10[0-3]</nationalNumberPattern>
+        <nationalNumberPattern>10[0-35]</nationalNumberPattern>
       </emergency>
     </territory>
 
@@ -9627,7 +9810,7 @@
         <nationalNumberPattern>
           1(?:
             0[01]|
-            1[12]|
+            1[128]|
             2[034]|
             3[013]|
             [46]0|
@@ -9642,10 +9825,13 @@
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
-        <possibleLengths national="2,6"/>
+        <possibleLengths national="2,3,6"/>
         <exampleNumber>15</exampleNumber>
         <nationalNumberPattern>
-          1[578]|
+          1(?:
+            18|
+            [578]
+          )|
           723\d{3}
         </nationalNumberPattern>
       </tollFree>
@@ -9668,10 +9854,13 @@
         </nationalNumberPattern>
       </carrierSpecific>
       <emergency>
-        <possibleLengths national="2,6"/>
+        <possibleLengths national="2,3,6"/>
         <exampleNumber>15</exampleNumber>
         <nationalNumberPattern>
-          1[578]|
+          1(?:
+            18|
+            [578]
+          )|
           723141
         </nationalNumberPattern>
       </emergency>
@@ -9924,6 +10113,7 @@
               [59]
             )|
             7[57]|
+            8[5-9]\d|
             90
           )
         </nationalNumberPattern>
@@ -9960,26 +10150,36 @@
     <!-- http://www.ntc.net.np/mobile/mob_postpaid_number_scheme.php -->
     <territory id="NP">
       <generalDesc>
-        <nationalNumberPattern>1\d\d</nationalNumberPattern>
+        <nationalNumberPattern>1\d{2,3}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,4"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            0[0-3]|
-            12
+            0(?:
+              [0-36]|
+              98
+            )|
+            1(?:
+              1[1-4]|
+              2
+            )
           )
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,4"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            0[0-3]|
+            0[0-36]|
             12
-          )
+          )|
+          1(?:
+            09|
+            11
+          )\d
         </nationalNumberPattern>
       </tollFree>
       <emergency>
@@ -9992,6 +10192,17 @@
           )
         </nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="3,4"/>
+        <exampleNumber>106</exampleNumber>
+        <nationalNumberPattern>
+          106|
+          1(?:
+            09|
+            11
+          )\d
+        </nationalNumberPattern>
+      </expandedEmergency>
     </territory>
 
     <!-- Nauru (NR) -->
@@ -10131,22 +10342,46 @@
     <!-- http://www.itu.int/oth/T020200009F/en -->
     <territory id="OM">
       <generalDesc>
-        <nationalNumberPattern>9\d{3}</nationalNumberPattern>
+        <nationalNumberPattern>[19]\d{3}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
         <possibleLengths national="4"/>
-        <exampleNumber>9999</exampleNumber>
-        <nationalNumberPattern>9999</nationalNumberPattern>
+        <exampleNumber>1111</exampleNumber>
+        <nationalNumberPattern>
+          1(?:
+            111|
+            222|
+            4(?:
+              4[0-5]|
+              50|
+              66|
+              7[7-9]
+            )|
+            51[0-8]
+          )|
+          9999|
+          1(?:
+            2[3-5]|
+            3[0-2]|
+            50
+          )\d
+        </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="4"/>
-        <exampleNumber>9990</exampleNumber>
-        <nationalNumberPattern>999\d</nationalNumberPattern>
+        <exampleNumber>1444</exampleNumber>
+        <nationalNumberPattern>
+          1444|
+          999\d
+        </nationalNumberPattern>
       </tollFree>
       <emergency>
         <possibleLengths national="4"/>
-        <exampleNumber>9999</exampleNumber>
-        <nationalNumberPattern>9999</nationalNumberPattern>
+        <exampleNumber>1444</exampleNumber>
+        <nationalNumberPattern>
+          1444|
+          9999
+        </nationalNumberPattern>
       </emergency>
     </territory>
 
@@ -10326,12 +10561,11 @@
         <exampleNumber>15</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            1(?:
-              22?|
-              5
-            )|
+            122|
+            3[014]|
             [56]
-          )
+          )|
+          11[2457-9]
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -10536,31 +10770,61 @@
       <generalDesc>
         <nationalNumberPattern>
           1\d\d(?:
-            \d{3}
+            \d(?:
+              \d{2}
+            )?
           )?
         </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,6"/>
+        <possibleLengths national="3,4,6"/>
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
-          11(?:
-            [2578]|
+          1(?:
+            0(?:
+              45|
+              5[01]
+            )|
+            1(?:
+              [2578]|
+              600[06]
+            )|
+            4(?:
+              1[45]|
+              4
+            )|
+            583|
             6(?:
-              000|
-              111
+              1[0236]|
+              3[02]|
+              9[169]
             )
-          )
+          )|
+          1(?:
+            1611|
+            59
+          )1|
+          1[068]78|
+          1[08]9[16]|
+          1(?:
+            0[1-38]|
+            40|
+            5[15]|
+            6[258]|
+            82
+          )0
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
-        <possibleLengths national="3,6"/>
+        <possibleLengths national="3,4,6"/>
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
-          11(?:
-            [25]|
-            6\d{3}
-          )
+          11[25]|
+          1(?:
+            16\d\d|
+            5[1589]|
+            8[279]
+          )\d
         </nationalNumberPattern>
       </tollFree>
       <emergency>
@@ -10702,36 +10966,45 @@
     <!-- https://en.wikipedia.org/wiki/Telephone_numbers_in_Romania -->
     <territory id="RO">
       <generalDesc>
-        <nationalNumberPattern>
-          [18]\d\d(?:
-            \d(?:
-              \d{2}
-            )?
-          )?
-        </nationalNumberPattern>
+        <nationalNumberPattern>[18]\d{2,5}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,4,6"/>
+        <possibleLengths national="[3-6]"/>
         <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
           1(?:
             1(?:
               2|
-              6111|
-              8932
+              6(?:
+                000|
+                1(?:
+                  11|
+                  23
+                )
+              )|
+              8(?:
+                (?:
+                  01|
+                  8[18]
+                )1|
+                119|
+                [23]00|
+                932
+              )
             )|
             [24]\d\d|
             9(?:
+              0(?:
+                00|
+                19
+              )|
+              1[19]|
               21|
               3[02]|
               5[178]
             )
           )|
-          8[48]\d\d|
-          11(?:
-            60|
-            83
-          )00
+          8[48]\d\d
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -10750,7 +11023,7 @@
         <nationalNumberPattern>
           (?:
             1(?:
-              18\d|
+              18[39]|
               [24]
             )|
             8[48]
@@ -10856,23 +11129,37 @@
     <!-- http://en.wikipedia.org/wiki/+250 -->
     <territory id="RW">
       <generalDesc>
-        <nationalNumberPattern>1\d\d</nationalNumberPattern>
+        <nationalNumberPattern>[14]\d\d</nationalNumberPattern>
       </generalDesc>
       <shortCode>
         <possibleLengths national="3"/>
-        <exampleNumber>112</exampleNumber>
-        <nationalNumberPattern>112</nationalNumberPattern>
+        <exampleNumber>100</exampleNumber>
+        <nationalNumberPattern>
+          1(?:
+            0[0-2]|
+            1[0-24-6]|
+            2[13]|
+            70|
+            99
+          )|
+          456
+        </nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="3"/>
-        <exampleNumber>112</exampleNumber>
-        <nationalNumberPattern>112</nationalNumberPattern>
+        <exampleNumber>111</exampleNumber>
+        <nationalNumberPattern>11[1245]</nationalNumberPattern>
       </tollFree>
       <emergency>
         <possibleLengths national="3"/>
-        <exampleNumber>112</exampleNumber>
-        <nationalNumberPattern>112</nationalNumberPattern>
+        <exampleNumber>111</exampleNumber>
+        <nationalNumberPattern>11[12]</nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="3"/>
+        <exampleNumber>114</exampleNumber>
+        <nationalNumberPattern>11[45]</nationalNumberPattern>
+      </expandedEmergency>
     </territory>
 
     <!-- Saudi Arabia (SA) -->
@@ -10899,7 +11186,7 @@
               9(?:
                 099|
                 22|
-                91
+                9[0-3]
               )
             )
           )|
@@ -11220,18 +11507,22 @@
       </generalDesc>
       <shortCode>
         <possibleLengths national="[3-5]"/>
-        <exampleNumber>990</exampleNumber>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            [0136]\d\d|
+            (?:
+              [01368]\d|
+              44
+            )\d|
             [57]\d{2,3}|
-            [89](?:
+            9(?:
               0[1-9]|
               [1-9]\d
             )
           )|
           77222|
-          99[02-9]
+          99[02-9]|
+          100
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -11255,13 +11546,14 @@
     <!-- St. Helena (SH) -->
     <territory id="SH">
       <generalDesc>
-        <nationalNumberPattern>[19]\d{2,3}</nationalNumberPattern>
+        <nationalNumberPattern>[129]\d{2,4}</nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,4"/>
+        <possibleLengths national="[3-5]"/>
         <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1\d{2,3}|
+          26[01]\d\d|
           9(?:
             11|
             99
@@ -11685,6 +11977,28 @@
       </emergency>
     </territory>
 
+    <!-- South Sudan (SS) -->
+    <territory id="SS">
+      <generalDesc>
+        <nationalNumberPattern>9\d\d</nationalNumberPattern>
+      </generalDesc>
+      <shortCode>
+        <possibleLengths national="3"/>
+        <exampleNumber>999</exampleNumber>
+        <nationalNumberPattern>999</nationalNumberPattern>
+      </shortCode>
+      <tollFree>
+        <possibleLengths national="3"/>
+        <exampleNumber>999</exampleNumber>
+        <nationalNumberPattern>999</nationalNumberPattern>
+      </tollFree>
+      <emergency>
+        <possibleLengths national="3"/>
+        <exampleNumber>999</exampleNumber>
+        <nationalNumberPattern>999</nationalNumberPattern>
+      </emergency>
+    </territory>
+
     <!-- São Tomé & Príncipe (ST) -->
     <!-- http://www.itu.int/oth/T02020000B6/en -->
     <territory id="ST">
@@ -11717,23 +12031,38 @@
     <territory id="SV">
       <generalDesc>
         <nationalNumberPattern>
-          [49]\d\d(?:
-            \d{2}
+          [149]\d\d(?:
+            \d{2,3}
           )?
         </nationalNumberPattern>
       </generalDesc>
       <shortCode>
-        <possibleLengths national="3,5"/>
-        <exampleNumber>911</exampleNumber>
+        <possibleLengths national="3,5,6"/>
+        <exampleNumber>112</exampleNumber>
         <nationalNumberPattern>
+          1(?:
+            1(?:
+              2|
+              6111
+            )|
+            2[136-8]|
+            3[0-6]|
+            9[05]
+          )|
           40404|
-          911
+          9(?:
+            1\d|
+            29
+          )
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
-        <possibleLengths national="3"/>
+        <possibleLengths national="3,6"/>
         <exampleNumber>911</exampleNumber>
-        <nationalNumberPattern>911</nationalNumberPattern>
+        <nationalNumberPattern>
+          116\d{3}|
+          911
+        </nationalNumberPattern>
       </tollFree>
       <!-- https://support.twitter.com/articles/20170024 -->
       <carrierSpecific>
@@ -11744,8 +12073,13 @@
       <emergency>
         <possibleLengths national="3"/>
         <exampleNumber>911</exampleNumber>
-        <nationalNumberPattern>911</nationalNumberPattern>
+        <nationalNumberPattern>91[13]</nationalNumberPattern>
       </emergency>
+      <expandedEmergency>
+        <possibleLengths national="6"/>
+        <exampleNumber>116000</exampleNumber>
+        <nationalNumberPattern>116\d{3}</nationalNumberPattern>
+      </expandedEmergency>
       <!-- https://support.twitter.com/articles/20170024 -->
       <smsServices>
         <possibleLengths national="5"/>
@@ -11966,11 +12300,12 @@
               6[04-79]|
               7[03-9]|
               8[027-9]|
-              9[02-79]
+              9[02-9]
             )|
             2(?:
               22|
-              3[89]
+              3[89]|
+              66
             )|
             3(?:
               18|
@@ -12047,7 +12382,7 @@
               4[02-49]|
               5[046-9]|
               7[03-589]|
-              9[579]
+              9[57-9]
             )|
             5(?:
               0[0-8]|
@@ -12066,6 +12401,7 @@
           )|
           1(?:
             1[68]|
+            26|
             3[1-35]|
             5[689]|
             60|
@@ -12192,12 +12528,12 @@
       <shortCode>
         <possibleLengths national="2"/>
         <exampleNumber>01</exampleNumber>
-        <nationalNumberPattern>0[1-3]</nationalNumberPattern>
+        <nationalNumberPattern>0[1-49]</nationalNumberPattern>
       </shortCode>
       <tollFree>
         <possibleLengths national="2"/>
         <exampleNumber>01</exampleNumber>
-        <nationalNumberPattern>0[1-3]</nationalNumberPattern>
+        <nationalNumberPattern>0[1-49]</nationalNumberPattern>
       </tollFree>
       <!-- http://www.netglobers.com/asia/turkmenistan-emergency-numbers-in-turkmenistan.html
            http://www.voyage.gc.ca/countries_pays/report_rapport-eng.asp?id=301000 -->
@@ -12294,35 +12630,36 @@
         <nationalNumberPattern>
           1(?:
             1(?:
-              [0239]|
-              811
+              [02-79]|
+              8(?:
+                1[018]|
+                2[0245]|
+                3[2-4]|
+                42|
+                5[058]|
+                6[06]|
+                7[07]|
+                8[01389]|
+                9[089]
+              )
             )|
-            2[126]|
             3(?:
-              [12]|
-              37?|
+              37|
               [58]6|
-              65?
+              65
             )|
-            4(?:
-              [014]|
-              71
-            )|
+            471|
             5(?:
               07|
-              [135689]|
-              78?
+              78
             )|
             6(?:
               [02]6|
-              [138]|
-              99?
+              99
             )|
-            7[0-79]|
             8(?:
-              [0-578]|
-              63?|
-              95?
+              63|
+              95
             )
           )|
           2(?:
@@ -12413,7 +12750,8 @@
           9(?:
             159|
             290
-          )
+          )|
+          1[2-9]\d
         </nationalNumberPattern>
       </shortCode>
       <tollFree>
@@ -12477,11 +12815,21 @@
           1(?:
             3(?:
               37|
+              [58]6|
               65
             )|
-            44|
-            578|
-            699|
+            4(?:
+              4|
+              71
+            )|
+            5(?:
+              07|
+              78
+            )|
+            6(?:
+              [02]6|
+              99
+            )|
             8(?:
               3|
               63|
@@ -12489,12 +12837,6 @@
             )
           )|
           (?:
-            1(?:
-              3[58]|
-              47|
-              50|
-              6[02]
-            )|
             2(?:
               07|
               26|
@@ -12608,14 +12950,20 @@
       </generalDesc>
       <shortCode>
         <possibleLengths national="3,4"/>
-        <exampleNumber>104</exampleNumber>
+        <exampleNumber>100</exampleNumber>
         <nationalNumberPattern>
           1(?:
-            0[4-6]|
-            1[02389]|
-            6[5-8]|
+            0[04-6]|
+            1[0237-9]|
+            3[389]|
+            6[05-8]|
+            7[07]|
+            8(?:
+              0|
+              11
+            )|
             9(?:
-              1[0-29]|
+              19|
               22|
               5[057]|
               68|
@@ -12629,10 +12977,11 @@
         <possibleLengths national="3,4"/>
         <exampleNumber>110</exampleNumber>
         <nationalNumberPattern>
+          11[0289]|
           1(?:
-            1[0289]|
-            92\d
-          )
+            81|
+            92
+          )\d
         </nationalNumberPattern>
       </tollFree>
       <standardRate>
@@ -12642,7 +12991,7 @@
           1(?:
             65|
             9(?:
-              19|
+              1\d|
               50|
               85|
               98
@@ -12676,7 +13025,7 @@
         <possibleLengths national="3,5"/>
         <exampleNumber>111</exampleNumber>
         <nationalNumberPattern>
-          11[12]|
+          11[128]|
           46400|
           999
         </nationalNumberPattern>
@@ -13349,7 +13698,8 @@
         <nationalNumberPattern>
           1(?:
             1[12]|
-            2[0-6]
+            2[0-6]|
+            [39]0
           )|
           9(?:
             11|
